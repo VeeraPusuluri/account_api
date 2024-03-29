@@ -1,0 +1,21 @@
+version: 1.0
+
+phases:
+  install:
+    runtime-versions:
+      java: correto21
+  build:
+    commands:
+      - mvn clean install
+
+  post_build:
+    commands:
+      - echo build completed
+
+artifacts:
+  files:
+    - target/.*jar
+    - scripts/.*sh
+    - appspec.yml
+    -
+  discard-paths: yes
